@@ -1,0 +1,276 @@
+:root {
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --White: hsl(255, 100%, 100%);
+  --fs: 0.94rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background-color: var(--Very-Light-Grayish-Blue);
+  background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: right top, left bottom;
+  background-size: 25%;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 450px;
+  margin-inline: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* HEADER */
+
+.main-header {
+  display: grid;
+  gap: 2rem;
+}
+
+h1 {
+  color: var(--Grayish-Blue);
+}
+
+label {
+  color: var(--Light-Grayish-Blue);
+  font-size: var(--fs);
+}
+
+/* TOGGLE */
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-label {
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  width: 50px;
+  height: 26px;
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label:hover {
+  background: hsl(236, 72%, 79%);
+}
+
+.toggle {
+  position: absolute;
+  background-color: var(--White);
+  border-radius: 50%;
+  left: 0;
+  bottom: 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.toggle::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 3px;
+  background-color: var(--White);
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .toggle::before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+section {
+  text-align: center;
+  background-color: var(--White);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  border-radius: 0.8rem;
+  -webkit-box-shadow: 6px 10px 24px 1px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 6px 10px 24px 1px rgba(0, 0, 0, 0.09);
+  box-shadow: 6px 10px 24px 1px rgba(0, 0, 0, 0.09);
+}
+
+section header {
+  display: grid;
+  gap: 1rem;
+}
+
+.professional {
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  border-radius: 0.8rem;
+  height: 480px;
+  padding-block: 4rem;
+}
+
+.professional h2,
+.professional .price {
+  color: var(--White);
+}
+
+h2 {
+  font-size: 1rem;
+  color: var(--Grayish-Blue);
+}
+
+.price {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--Dark-Grayish-Blue);
+}
+
+.price span {
+  font-size: 4rem;
+}
+
+table {
+  color: var(--Grayish-Blue);
+  font-size: var(--fs);
+}
+
+td {
+  border-top: 1px solid hsla(234, 14%, 74%, 0.3);
+  padding: 0.7rem;
+}
+
+tr:last-child td {
+  border-bottom: 1px solid hsla(234, 14%, 74%, 0.3);
+}
+
+button {
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.4rem;
+}
+
+.basic button,
+.master button {
+  background: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: var(--White);
+}
+
+.basic button:hover,
+.master button:hover {
+  color: hsl(237, 63%, 64%);
+  border: 1px solid var(--Grayish-Blue);
+}
+
+.professional button {
+  background-color: var(--White);
+  color: hsl(237, 63%, 64%);
+}
+
+.professional button:hover {
+  border: 1px solid var(--White);
+  color: var(--White);
+}
+
+button:hover {
+  background: transparent;
+}
+
+.professional table {
+  color: var(--White);
+}
+
+/* FOOTER */
+
+.attribution {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--Grayish-Blue);
+  margin-top: 1rem;
+}
+
+.attribution a {
+  color: hsl(237, 63%, 64%);
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 820px) {
+  body {
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+  }
+
+  main {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+  section {
+    width: 33%;
+  }
+
+  .basic {
+    border-radius: 0.8rem 0 0 0.8rem;
+    height: 440px;
+  }
+
+  .master {
+    border-radius: 0 0.8rem 0.8rem 0;
+    height: 440px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .container {
+    max-width: 1050px;
+    width: 1050px;
+  }
+}
